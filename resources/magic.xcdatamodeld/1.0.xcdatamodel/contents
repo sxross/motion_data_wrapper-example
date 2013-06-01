@@ -3,15 +3,15 @@
     <entity name="Date" syncable="YES">
         <attribute name="date" attributeType="Date" indexed="YES" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" minValueString="1" syncable="YES"/>
-        <relationship name="people" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="dates" inverseEntity="Person" syncable="YES"/>
+        <relationship name="person" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="dates" inverseEntity="Person" syncable="YES"/>
     </entity>
     <entity name="Person" syncable="YES">
         <attribute name="first_name" optional="YES" attributeType="String" minValueString="1" syncable="YES"/>
         <attribute name="last_name" optional="YES" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
-        <relationship name="dates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Date" inverseName="people" inverseEntity="Date" syncable="YES"/>
+        <relationship name="dates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Date" inverseName="person" inverseEntity="Date" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Date" positionX="-10928" positionY="-6354" width="128" height="90"/>
+        <element name="Date" positionX="-10928" positionY="-6354" width="128" height="88"/>
         <element name="Person" positionX="-10901" positionY="-6588" width="128" height="90"/>
     </elements>
 </model>
